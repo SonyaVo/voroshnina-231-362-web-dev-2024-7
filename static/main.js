@@ -98,7 +98,6 @@ function compile(str) {
 // (https://ru.wikipedia.org/wiki/Обратная_польская_запись#Вычисления_на_стеке).
 function evaluate(str) {
     let stack = [];
-    stack.push(0)
     let tokens = str.split(' ');
 
     for (let token of tokens) {
@@ -155,6 +154,7 @@ function clickHandler(event) {
         const rpnExpression = compile(screen.textContent);
         const result = evaluate(rpnExpression);
         screen.textContent = result.toFixed(2);
+    
     }
 }
 
